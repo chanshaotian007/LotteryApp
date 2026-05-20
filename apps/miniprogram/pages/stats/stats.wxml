@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="card" wx:if="{{stats}}">
+    <view class="title">统计概览</view>
+    <view class="muted">最新期号：{{stats.latestIssue}}</view>
+    <view class="muted">累计开奖：{{stats.drawCount}}</view>
+    <view class="section-title" style="margin-top: 24rpx;">前区热度</view>
+    <view class="muted">{{JSON.stringify(stats.primaryFrequency)}}</view>
+  </view>
+</view>

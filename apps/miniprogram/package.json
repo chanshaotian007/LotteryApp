@@ -1,0 +1,16 @@
+{
+  "name": "@lottery/miniprogram",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@lottery/contracts": "workspace:*",
+    "@lottery/domain": "workspace:*",
+    "tdesign-miniprogram": "^1.9.6"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^4.0.8"
+  }
+}

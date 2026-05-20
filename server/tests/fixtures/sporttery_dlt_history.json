@@ -1,0 +1,15 @@
+{
+  "value": {
+    "list": [
+      {
+        "lotteryDrawNum": "25055",
+        "lotteryDrawTime": "2025-05-14",
+        "lotteryDrawResult": "01 07 12 25 35 03 11",
+        "prizeLevelList": [
+          {"prizeLevel": "1", "stakeAmount": "3", "stakePrize": "10000000"}
+        ]
+      }
+    ]
+  }
+}
+

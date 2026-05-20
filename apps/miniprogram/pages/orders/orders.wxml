@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="card">
+    <view class="title">我的订单</view>
+    <view wx:for="{{orders}}" wx:key="orderNo" class="result-item">
+      <view>{{item.productName}}</view>
+      <view class="muted">订单号：{{item.orderNo}}</view>
+      <view class="muted">状态：{{item.status}} / 金额：{{item.priceFen}} 分</view>
+    </view>
+  </view>
+</view>

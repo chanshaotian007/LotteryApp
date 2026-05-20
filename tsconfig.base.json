@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lottery/contracts": ["packages/contracts/src"],
+      "@lottery/contracts/*": ["packages/contracts/src/*"],
+      "@lottery/domain": ["packages/domain/src"],
+      "@lottery/domain/*": ["packages/domain/src/*"],
+      "@lottery/adapters": ["packages/adapters/src"],
+      "@lottery/adapters/*": ["packages/adapters/src/*"]
+    }
+  }
+}

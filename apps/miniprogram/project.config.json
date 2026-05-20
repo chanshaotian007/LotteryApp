@@ -1,0 +1,14 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "LotteryAppMiniProgram",
+  "compileType": "miniprogram",
+  "setting": {
+    "es6": true,
+    "minified": false,
+    "enhance": true,
+    "postcss": true,
+    "coverView": true
+  },
+  "libVersion": "trial",
+  "appid": "touristappid"
+}

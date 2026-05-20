@@ -1,0 +1,78 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: lottery
+      POSTGRES_USER: lottery
+      POSTGRES_PASSWORD: lottery
+    ports:
+      - "5432:5432"
+    volumes:
+      - lottery_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lottery -d lottery"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./server
+    env_file:
+      - ./server/.env.example
+    environment:
+      LOTTERY_DATABASE_URL: postgresql+psycopg://lottery:lottery@postgres:5432/lottery
+      LOTTERY_REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+  worker:
+    build:
+      context: ./server
+    env_file:
+      - ./server/.env.example
+    environment:
+      LOTTERY_DATABASE_URL: postgresql+psycopg://lottery:lottery@postgres:5432/lottery
+      LOTTERY_REDIS_URL: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A app.tasks.celery_app.celery_app worker --loglevel=INFO
+
+  beat:
+    build:
+      context: ./server
+    env_file:
+      - ./server/.env.example
+    environment:
+      LOTTERY_DATABASE_URL: postgresql+psycopg://lottery:lottery@postgres:5432/lottery
+      LOTTERY_REDIS_URL: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A app.tasks.celery_app.celery_app beat --loglevel=INFO
+
+volumes:
+  lottery_postgres:

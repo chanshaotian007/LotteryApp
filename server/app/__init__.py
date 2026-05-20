@@ -1,0 +1,2 @@
+"""Lottery service package."""
+

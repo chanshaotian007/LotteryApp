@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">彩票号码生成器</string>
+    <string name="double_color_ball">双色球</string>
+    <string name="super_lotto">大乐透</string>
+    <string name="generate">生成号码</string>
+    <string name="multiple_selection">复选</string>
+    <string name="clear_all">清除全部</string>
+    <string name="copy_numbers">复制号码</string>
+    <string name="betting_plan">投注方案</string>
+    <string name="target_prize_option">目标一等奖5000万+（含倍投估算）</string>
+    <string name="complex_betting_note">复式投注用于扩大覆盖范围；模型、排重和预算为会员功能，网络失败或未登录时继续本地随机生成。请成年人理性使用，本应用不售彩、不代购、不出票、不处理投注支付。</string>
+    <string name="mode_random">随机生成</string>
+    <string name="mode_exclude_history">历史高奖级排重</string>
+    <string name="mode_prediction">AI模型预测</string>
+    <string name="exclude_history_option">排除历史二等奖以上可能命中组合</string>
+    <string name="member_demo_switch">会员状态（演示令牌）</string>
+    <string name="budget_min">最低预算</string>
+    <string name="budget_max">最高预算</string>
+    <string name="load_history">开奖历史</string>
+    <string name="model_report">模型报告</string>
+    <string name="service_status_local">当前：本地随机兜底</string>
+    <string name="red_ball">红球</string>
+    <string name="blue_ball">蓝球</string>
+    <string name="front_zone">前区</string>
+    <string name="back_zone">后区</string>
+    <string name="generated_numbers">已生成号码</string>
+    <string name="empty_numbers">暂无号码</string>
+</resources>

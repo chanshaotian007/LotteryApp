@@ -1,0 +1,13 @@
+{
+  "name": "@lottery/bootstrap-login",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@lottery/contracts": "workspace:*",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

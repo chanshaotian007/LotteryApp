@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="card">
+    <view class="title">智能选号</view>
+    <view class="section-title">彩种</view>
+    <radio-group bindchange="onGameChange">
+      <label><radio value="ssq" checked="{{form.gameCode === 'ssq'}}" /> 双色球</label>
+      <label style="margin-left: 24rpx;"><radio value="dlt" checked="{{form.gameCode === 'dlt'}}" /> 大乐透</label>
+    </radio-group>
+
+    <view class="section-title" style="margin-top: 24rpx;">模式</view>
+    <radio-group bindchange="onModeChange">
+      <label><radio value="random" checked="{{form.mode === 'random'}}" /> 随机</label>
+      <label style="margin-left: 24rpx;"><radio value="excludeHistory" checked="{{form.mode === 'excludeHistory'}}" /> 历史排除</label>
+      <label style="margin-left: 24rpx;"><radio value="modelPrediction" checked="{{form.mode === 'modelPrediction'}}" /> 模型预测</label>
+    </radio-group>
+
+    <view class="button-row">
+      <button type="primary" loading="{{loading}}" bindtap="onGenerate">生成方案</button>
+    </view>
+    <view wx:if="{{error}}" class="muted" style="margin-top: 16rpx; color: #dc2626;">{{error}}</view>
+  </view>
+
+  <view class="card" wx:if="{{result}}">
+    <view class="section-title">生成结果</view>
+    <view wx:for="{{result.candidates}}" wx:key="index" class="result-item">
+      <view>
+        <text wx:for="{{item.primaryNumbers}}" wx:key="*this" class="number-chip">{{item}}</text>
+      </view>
+      <view>
+        <text wx:for="{{item.secondaryNumbers}}" wx:key="*this" class="number-chip secondary">{{item}}</text>
+      </view>
+      <view class="muted">注数：{{item.totalBets}}，金额：{{item.totalCost}} 元，倍数：{{item.stakeMultiplier}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+# Android and Gradle
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+local.properties
+
+# Kotlin/Java
+*.class
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Node
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+apps/admin-web/dist/
+apps/miniprogram/miniprogram_npm/
+
+# Runtime data and secrets
+.env
+server/.env
+lottery_dev.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+
+# IDE and OS
+.idea/
+*.iml
+.DS_Store

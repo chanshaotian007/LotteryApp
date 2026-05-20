@@ -1,0 +1,31 @@
+{
+  "envId": "your-cloudbase-env",
+  "service": {
+    "name": "lottery-api",
+    "source": {
+      "root": "."
+    },
+    "dockerfile": "services/api/Dockerfile",
+    "cpu": 1,
+    "mem": 2,
+    "minNum": 0,
+    "maxNum": 3,
+    "envParams": {
+      "PORT": "3000",
+      "APP_ENV": "production",
+      "DATABASE_URL": "mysql://user:password@mysql:3306/lotteryapp",
+      "JWT_SECRET": "replace-with-long-random-secret",
+      "JOB_SHARED_SECRET": "replace-with-job-secret"
+    }
+  },
+  "functions": [
+    {
+      "name": "bootstrapLogin",
+      "path": "cloudfunctions/bootstrapLogin"
+    },
+    {
+      "name": "jobs",
+      "path": "cloudfunctions/jobs"
+    }
+  ]
+}

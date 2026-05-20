@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="card" wx:if="{{profile}}">
+    <view class="title">个人资料</view>
+    <view class="muted">OpenID：{{profile.openId}}</view>
+    <view class="muted">昵称：{{profile.nickname || '未设置'}}</view>
+    <view class="muted">管理员：{{profile.isAdmin ? '是' : '否'}}</view>
+  </view>
+  <view class="card">
+    <view class="section-title">合规说明</view>
+    <view class="muted">本服务仅提供统计推荐，不售彩、不代购、不出票、不处理投注资金。</view>
+    <view class="muted">请以官方开奖和规则为准，理性消费。</view>
+  </view>
+</view>

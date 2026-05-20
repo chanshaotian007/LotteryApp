@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/history/history",
+    "pages/stats/stats",
+    "pages/membership/membership",
+    "pages/orders/orders",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "选号助手",
+    "navigationBarBackgroundColor": "#f7f9fc",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eef2f7"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

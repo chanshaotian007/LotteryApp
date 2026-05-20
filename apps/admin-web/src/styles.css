@@ -1,0 +1,96 @@
+:root {
+  color: #0f172a;
+  background: #e6edf4;
+  font-family: "IBM Plex Sans", "PingFang SC", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  background: radial-gradient(circle at top, #103b5b, #081625 72%);
+  color: #fff;
+  padding: 28px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sidebar a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.sidebar a.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.content {
+  padding: 32px;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+}
+
+.panel label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  background: #0f766e;
+  color: #fff;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.job {
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
